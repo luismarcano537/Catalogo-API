@@ -23,5 +23,5 @@ public class Category
     [StringLength(300)]
     public string? ImageURL { get; set; }
 
-    public ICollection<Product>? Products { get; set; }
+    public ICollection<Product> Products { get; set; }
 }

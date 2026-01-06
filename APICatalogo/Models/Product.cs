@@ -28,5 +28,6 @@ public class Product
     public DateTime DateRegistration { get; set; }
 
     public int CategoryID { get; set; }
+    public int SupplierID { get; set; }
     public Category? Category { get; set; }
 }
