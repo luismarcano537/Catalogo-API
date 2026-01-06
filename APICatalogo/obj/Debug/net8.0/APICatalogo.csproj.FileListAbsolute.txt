@@ -16,13 +16,7 @@ C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.EntityFrameworkCo
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\MySqlConnector.dll
