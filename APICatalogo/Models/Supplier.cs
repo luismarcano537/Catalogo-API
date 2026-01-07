@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace APICatalogo.Models;
 
@@ -9,10 +10,22 @@ public class Supplier
         Products = new Collection<Product>();
     }
 
+    [Key]
     public int SupplierID { get; set; }
+
+    [Required]
+    [StringLength(80)]
     public string Name { get; set; }
+
+    [Required]
+    [StringLength(80)]
     public string Document { get; set; }
-    public bool IsActive { get; set; } = true;
+
+    [Required]
+    public bool IsActive { get; set; }
+
+    [Required]
+    [StringLength(300)]
     public string ImageURL { get; set; }
     public DateTime DateCreation { get; set; }
 

@@ -10,4 +10,5 @@ public class APICatalogoContext : DbContext
 
     DbSet<Category> Categories { get; set; }
     DbSet<Product> Products { get; set; }
+    DbSet<Supplier> Suppliers { get; set; }
 }

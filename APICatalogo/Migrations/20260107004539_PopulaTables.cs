@@ -5,7 +5,7 @@
 namespace APICatalogo.Migrations
 {
     /// <inheritdoc />
-    public partial class PopularCategorys : Migration
+    public partial class PopulaTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder mb)
