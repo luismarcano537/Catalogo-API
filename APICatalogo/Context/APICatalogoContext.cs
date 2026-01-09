@@ -8,7 +8,7 @@ public class APICatalogoContext : DbContext
 {
     public APICatalogoContext(DbContextOptions<APICatalogoContext> options ) : base(options) { }
 
-    DbSet<Category> Categories { get; set; }
-    DbSet<Product> Products { get; set; }
-    DbSet<Supplier> Suppliers { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Supplier> Suppliers { get; set; }
 }

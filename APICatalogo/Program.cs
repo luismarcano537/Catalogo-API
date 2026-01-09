@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 var MySQLConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<APICatalogoContext>(options =>
-options.UseMySql(MySQLConnection, 
+options.UseMySql(MySQLConnection,
 ServerVersion.AutoDetect(MySQLConnection)));
 
 var app = builder.Build();

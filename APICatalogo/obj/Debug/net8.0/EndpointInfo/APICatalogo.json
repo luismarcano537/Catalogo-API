@@ -1,16 +1,15 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "APICatalogo",
     "version": "1.0"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/Products": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Products"
         ],
-        "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
             "description": "OK",
@@ -19,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               },
@@ -27,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               },
@@ -35,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               }
@@ -47,24 +46,135 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Category": {
+        "required": [
+          "imageURL",
+          "name"
+        ],
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
+          "categoryID": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
+          "name": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string"
+          },
+          "imageURL": {
+            "maxLength": 300,
+            "minLength": 0,
+            "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Product": {
+        "required": [
+          "description",
+          "imageURL",
+          "name",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "productID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 300,
+            "minLength": 0,
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "imageURL": {
+            "maxLength": 300,
+            "minLength": 0,
+            "type": "string"
+          },
+          "stock": {
+            "type": "number",
+            "format": "float"
+          },
+          "dateRegistration": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "supplierID": {
             "type": "integer",
             "format": "int32",
-            "readOnly": true
+            "nullable": true
           },
-          "summary": {
+          "supplier": {
+            "$ref": "#/components/schemas/Supplier"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Supplier": {
+        "required": [
+          "document",
+          "imageURL",
+          "isActive",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "supplierID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string"
+          },
+          "document": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "imageURL": {
+            "maxLength": 300,
+            "minLength": 0,
+            "type": "string"
+          },
+          "dateCreation": {
             "type": "string",
+            "format": "date-time"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
             "nullable": true
           }
         },
