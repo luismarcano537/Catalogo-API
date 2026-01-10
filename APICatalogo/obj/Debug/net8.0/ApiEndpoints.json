@@ -21,6 +21,22 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
+    "Method": "Post",
+    "RelativePath": "Products",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "APICatalogo.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "GetID",
     "RelativePath": "Products/{id}",
     "HttpMethod": "GET",
@@ -43,6 +59,7 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "GetProduct"
   }
 ]
