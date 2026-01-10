@@ -61,5 +61,26 @@
       }
     ],
     "EndpointName": "GetProduct"
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.ProductsController",
+    "Method": "Put",
+    "RelativePath": "Products/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "APICatalogo.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
