@@ -21,7 +21,7 @@ namespace APICatalogo.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Category>> Get()
         {
-            var categories = _Context.Categories.ToList();
+            var categories = _Context.Categories.AsNoTracking().ToList();
 
             if (categories is null)
             {
@@ -34,7 +34,7 @@ namespace APICatalogo.Controllers
         [HttpGet("GetInclude")]
         public ActionResult<IEnumerable<Category>> GetInclude()
         {
-            var CategoryInclude = _Context.Categories.Include(P => P.Products).ToList();
+            var CategoryInclude = _Context.Categories.Include(P => P.Products).Where(P => P.CategoryID < 5).AsNoTracking().ToList();
 
             if (CategoryInclude is null)
             {
@@ -47,7 +47,7 @@ namespace APICatalogo.Controllers
         [HttpGet("{id:int}", Name = "GetCategory")]
         public ActionResult GetCategory(int id)
         {
-            var category = _Context.Categories.FirstOrDefault(C => C.CategoryID == id);
+            var category = _Context.Categories.AsNoTracking().FirstOrDefault(C => C.CategoryID == id);
 
             if (category is null)
             {

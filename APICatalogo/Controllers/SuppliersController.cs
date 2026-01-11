@@ -21,7 +21,7 @@ namespace APICatalogo.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Supplier>> Get()
         {
-            var suppliers = _Context.Suppliers.ToList();
+            var suppliers = _Context.Suppliers.AsNoTracking().ToList();
 
             if (suppliers is null)
             {
@@ -34,7 +34,7 @@ namespace APICatalogo.Controllers
         [HttpGet("id:int", Name = "GetID")]
         public ActionResult GetID(int id)
         {
-            var supplier = _Context.Suppliers.FirstOrDefault(S => S.SupplierID == id);
+            var supplier = _Context.Suppliers.AsNoTracking().FirstOrDefault(S => S.SupplierID == id);
 
             if (supplier is null)
             {
@@ -47,7 +47,7 @@ namespace APICatalogo.Controllers
         [HttpGet("GetInclude")]
         public ActionResult<IEnumerable<Supplier>> GetInclude()
         {
-            var supplier = _Context.Suppliers.Include(S => S.Products).ToList();
+            var supplier = _Context.Suppliers.Include(S => S.Products).Where(S => S.SupplierID < 5).AsNoTracking().ToList();
 
             if (supplier is null)
             {
