@@ -30,5 +30,18 @@ namespace APICatalogo.Controllers
 
             return Ok(suppliers);
         }
+
+        [HttpGet("id:int", Name = "GetID")]
+        public ActionResult GetID(int id)
+        {
+            var supplier = _Context.Suppliers.FirstOrDefault(S => S.SupplierID == id);
+
+            if (supplier is null)
+            {
+                return BadRequest("Unable to locate the requested Supplier.");
+            }
+
+            return Ok(supplier);
+        }
     }
 }
