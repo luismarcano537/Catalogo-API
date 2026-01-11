@@ -43,5 +43,18 @@ namespace APICatalogo.Controllers
 
             return Ok(supplier);
         }
+
+        [HttpGet("GetInclude")]
+        public ActionResult<IEnumerable<Supplier>> GetInclude()
+        {
+            var supplier = _Context.Suppliers.Include(S => S.Products).ToList();
+
+            if (supplier is null)
+            {
+                return BadRequest("The Supplier is empty");
+            }
+
+            return Ok(supplier);
+        }
     }
 }
