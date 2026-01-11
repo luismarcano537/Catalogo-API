@@ -72,5 +72,21 @@ namespace APICatalogo.Controllers
 
             return Ok(category);
         }
+
+        [HttpDelete("{id:int}")]
+        public ActionResult Delete(int id)
+        {
+            var category = _Context.Categories.FirstOrDefault(C => C.CategoryID == id);
+
+            if (category is null)
+            {
+                return BadRequest("Unable to find the requested category");
+            }
+
+            _Context.Categories.Remove(category);
+            _Context.SaveChanges();
+
+            return Ok(category);
+        }
     }
 }
