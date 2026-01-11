@@ -53,6 +53,27 @@
     "EndpointName": "GetCategory"
   },
   {
+    "ContainingType": "APICatalogo.Controllers.CategoriesController",
+    "Method": "Put",
+    "RelativePath": "Categories/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "category",
+        "Type": "APICatalogo.Models.Category",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "Get",
     "RelativePath": "Products",

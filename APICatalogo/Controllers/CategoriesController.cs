@@ -2,6 +2,7 @@
 using APICatalogo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APICatalogo.Controllers
@@ -53,6 +54,20 @@ namespace APICatalogo.Controllers
             }
 
             _Context.Categories.Add(category);
+            _Context.SaveChanges();
+
+            return Ok(category);
+        }
+
+        [HttpPut("{id:int}")]
+        public ActionResult Put(int id, Category category)
+        {
+            if (id != category.CategoryID)
+            {
+                return BadRequest("Please provide a valid ID.");
+            }
+
+            _Context.Entry(category).State = EntityState.Modified;
             _Context.SaveChanges();
 
             return Ok(category);
