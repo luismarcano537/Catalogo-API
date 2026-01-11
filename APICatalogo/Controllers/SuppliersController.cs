@@ -70,5 +70,19 @@ namespace APICatalogo.Controllers
 
             return Ok();
         }
+
+        [HttpPut("{id:int}")]
+        public ActionResult Put(int id, Supplier supplier)
+        {
+            if (id != supplier.SupplierID)
+            {
+                return BadRequest("Please provide a valid ID.");
+            }
+
+            _Context.Entry(supplier).State = EntityState.Modified;
+            _Context.SaveChanges();
+
+            return Ok(supplier);
+        }
     }
 }
