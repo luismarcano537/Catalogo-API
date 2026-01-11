@@ -84,5 +84,21 @@ namespace APICatalogo.Controllers
 
             return Ok(supplier);
         }
+
+        [HttpDelete("{id:int}")]
+        public ActionResult Delete(int id)
+        {
+            var supplier = _Context.Suppliers.FirstOrDefault(S => S.SupplierID == id);
+
+            if (supplier is null)
+            {
+                return BadRequest("Please provide a valid ID.");
+            }
+
+            _Context.Suppliers.Remove(supplier);
+            _Context.SaveChanges();
+
+            return Ok(supplier);
+        }
     }
 }
