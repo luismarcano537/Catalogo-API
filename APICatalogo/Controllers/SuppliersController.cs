@@ -56,5 +56,19 @@ namespace APICatalogo.Controllers
 
             return Ok(supplier);
         }
+
+        [HttpPost]
+        public ActionResult Post(Supplier supplier)
+        {
+            if (supplier is null)
+            {
+                return BadRequest("It is impossible to add an empty supplier.");
+            }
+
+            _Context.Suppliers.Add(supplier);
+            _Context.SaveChanges();
+
+            return Ok();
+        }
     }
 }

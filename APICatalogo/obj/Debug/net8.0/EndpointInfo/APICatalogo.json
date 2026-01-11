@@ -400,6 +400,35 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Suppliers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/Suppliers/id:int": {
@@ -583,13 +612,6 @@
           "dateCreation": {
             "type": "string",
             "format": "date-time"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Product"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

@@ -231,6 +231,22 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
+    "Method": "Post",
+    "RelativePath": "Suppliers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supplier",
+        "Type": "APICatalogo.Models.Supplier",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "GetInclude",
     "RelativePath": "Suppliers/GetInclude",
     "HttpMethod": "GET",

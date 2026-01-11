@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -80,14 +80,14 @@
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\SuppliersController.cs",
               "ToolTip": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\SuppliersController.cs",
               "RelativeToolTip": "APICatalogo\\Controllers\\SuppliersController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAmwCsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAA4wEYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T15:08:56.071Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriesController.cs",
@@ -160,13 +160,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\ProductsController.cs",
               "ToolTip": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "APICatalogo\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwC4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-09T22:45:41.803Z",
               "EditorCaption": ""
