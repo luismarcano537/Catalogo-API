@@ -42,5 +42,20 @@ namespace APICatalogo.Controllers
 
             return Ok(category);
         }
+
+        [HttpPost]
+        public ActionResult Post(Category category)
+        {
+            if (category is null)
+            {
+
+                return BadRequest("Unable to create a new category");
+            }
+
+            _Context.Categories.Add(category);
+            _Context.SaveChanges();
+
+            return Ok(category);
+        }
     }
 }
