@@ -31,6 +31,19 @@ namespace APICatalogo.Controllers
             return Ok(categories);
         }
 
+        [HttpGet("GetInclude")]
+        public ActionResult<IEnumerable<Category>> GetInclude()
+        {
+            var CategoryInclude = _Context.Categories.Include(P => P.Products).ToList();
+
+            if (CategoryInclude is null)
+            {
+                return BadRequest("Unable to display categories and their products");
+            }
+
+            return Ok(CategoryInclude);
+        }
+
         [HttpGet("{id:int}", Name = "GetCategory")]
         public ActionResult GetCategory(int id)
         {

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICatalogo.Models;
 
@@ -28,7 +29,9 @@ public class Product
     public DateTime DateRegistration { get; set; }
 
     public int CategoryID { get; set; }
+    [JsonIgnore]
     public Category? Category { get; set; }
     public int? SupplierID { get; set; }
+    [JsonIgnore]
     public Supplier? Supplier { get; set; }
 }
