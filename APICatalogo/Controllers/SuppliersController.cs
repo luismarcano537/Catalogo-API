@@ -1,9 +1,10 @@
 ﻿using APICatalogo.Context;
+using APICatalogo.Filters;
 using APICatalogo.Models;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace APICatalogo.Controllers
 {
@@ -19,6 +20,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Supplier>> Get()
         {
             try
@@ -39,6 +41,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet("id:int", Name = "GetID")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult GetID(int id)
         {
             try
@@ -59,6 +62,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet("GetInclude")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Supplier>> GetInclude()
         {
             try
@@ -79,6 +83,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Post(Supplier supplier)
         {
             try
@@ -100,6 +105,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Put(int id, Supplier supplier)
         {
             try
@@ -121,6 +127,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
             try

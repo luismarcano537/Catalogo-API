@@ -1,8 +1,9 @@
 ﻿using APICatalogo.Context;
+using APICatalogo.Filters;
 using APICatalogo.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace APICatalogo.Controllers
 {
@@ -18,6 +19,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Product>> Get()
         {
             try
@@ -36,6 +38,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetProduct")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<Product> GetID(int id)
         {
             try
@@ -54,6 +57,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Post(Product product)
         {
             try
@@ -74,6 +78,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Put(int id, Product product)
         {
             try
@@ -95,6 +100,7 @@ namespace APICatalogo.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
             try
