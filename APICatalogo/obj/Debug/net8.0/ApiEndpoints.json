@@ -2,7 +2,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.CategoriesController",
     "Method": "Get",
-    "RelativePath": "Categories",
+    "RelativePath": "API/Categories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -22,7 +22,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.CategoriesController",
     "Method": "Post",
-    "RelativePath": "Categories",
+    "RelativePath": "API/Categories",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -38,7 +38,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.CategoriesController",
     "Method": "GetCategory",
-    "RelativePath": "Categories/{id}",
+    "RelativePath": "API/Categories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -55,7 +55,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.CategoriesController",
     "Method": "Put",
-    "RelativePath": "Categories/{id}",
+    "RelativePath": "API/Categories/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -76,7 +76,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.CategoriesController",
     "Method": "Delete",
-    "RelativePath": "Categories/{id}",
+    "RelativePath": "API/Categories/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -92,7 +92,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.CategoriesController",
     "Method": "GetInclude",
-    "RelativePath": "Categories/GetInclude",
+    "RelativePath": "API/Categories/GetInclude",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -112,7 +112,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "Get",
-    "RelativePath": "Products",
+    "RelativePath": "API/Products",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -132,7 +132,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "Post",
-    "RelativePath": "Products",
+    "RelativePath": "API/Products",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -148,7 +148,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "GetID",
-    "RelativePath": "Products/{id}",
+    "RelativePath": "API/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -175,7 +175,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "Put",
-    "RelativePath": "Products/{id}",
+    "RelativePath": "API/Products/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -196,7 +196,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.ProductsController",
     "Method": "Delete",
-    "RelativePath": "Products/{id}",
+    "RelativePath": "API/Products/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -212,7 +212,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "Get",
-    "RelativePath": "Suppliers",
+    "RelativePath": "API/Suppliers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -232,7 +232,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "Post",
-    "RelativePath": "Suppliers",
+    "RelativePath": "API/Suppliers",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -248,7 +248,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "Put",
-    "RelativePath": "Suppliers/{id}",
+    "RelativePath": "API/Suppliers/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -269,7 +269,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "Delete",
-    "RelativePath": "Suppliers/{id}",
+    "RelativePath": "API/Suppliers/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -285,7 +285,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "GetInclude",
-    "RelativePath": "Suppliers/GetInclude",
+    "RelativePath": "API/Suppliers/GetInclude",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -305,7 +305,7 @@
   {
     "ContainingType": "APICatalogo.Controllers.SuppliersController",
     "Method": "GetID",
-    "RelativePath": "Suppliers/id:int",
+    "RelativePath": "API/Suppliers/id:int",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

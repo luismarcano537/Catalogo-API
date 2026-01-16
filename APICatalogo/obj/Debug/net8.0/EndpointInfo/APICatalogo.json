@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/Categories": {
+    "/API/Categories": {
       "get": {
         "tags": [
           "Categories"
@@ -72,7 +72,7 @@
         }
       }
     },
-    "/Categories/GetInclude": {
+    "/API/Categories/GetInclude": {
       "get": {
         "tags": [
           "Categories"
@@ -110,7 +110,7 @@
         }
       }
     },
-    "/Categories/{id}": {
+    "/API/Categories/{id}": {
       "get": {
         "tags": [
           "Categories"
@@ -195,7 +195,7 @@
         }
       }
     },
-    "/Products": {
+    "/API/Products": {
       "get": {
         "tags": [
           "Products"
@@ -262,7 +262,7 @@
         }
       }
     },
-    "/Products/{id}": {
+    "/API/Products/{id}": {
       "get": {
         "tags": [
           "Products"
@@ -364,7 +364,7 @@
         }
       }
     },
-    "/Suppliers": {
+    "/API/Suppliers": {
       "get": {
         "tags": [
           "Suppliers"
@@ -431,7 +431,7 @@
         }
       }
     },
-    "/Suppliers/id:int": {
+    "/API/Suppliers/id:int": {
       "get": {
         "tags": [
           "Suppliers"
@@ -454,7 +454,7 @@
         }
       }
     },
-    "/Suppliers/GetInclude": {
+    "/API/Suppliers/GetInclude": {
       "get": {
         "tags": [
           "Suppliers"
@@ -492,7 +492,7 @@
         }
       }
     },
-    "/Suppliers/{id}": {
+    "/API/Suppliers/{id}": {
       "put": {
         "tags": [
           "Suppliers"

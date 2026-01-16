@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace APICatalogo.Controllers
 {
-    [Route("[Controller]")]
+    [Route("API/[Controller]")]
     [ApiController]
     public class ProductsController : Controller
     {
