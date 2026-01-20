@@ -22,105 +22,70 @@ namespace APICatalogo.Controllers
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Product>> Get()
         {
-            try
+            var Products = _Context.Products.AsNoTracking().ToList();
+            if (Products is null)
             {
-                var Products = _Context.Products.AsNoTracking().ToList();
-                if (Products is null)
-                {
-                    return NotFound();
-                }
-                return Products;
+                return NotFound();
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request");
-            }
+            return Products;
         }
 
         [HttpGet("{id:int}", Name = "GetProduct")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<Product> GetID(int id)
         {
-            try
+            var Product = _Context.Products.AsNoTracking().FirstOrDefault(p => p.ProductID == id);
+            if (Product is null)
             {
-                var Product = _Context.Products.AsNoTracking().FirstOrDefault(p => p.ProductID == id);
-                if (Product is null)
-                {
-                    return NotFound();
-                }
-                return Product;
+                return NotFound();
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request");
-            }
+            return Product;
         }
 
         [HttpPost]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Post(Product product)
         {
-            try
+            if (product == null)
             {
-                if (product == null)
-                {
-                    return BadRequest();
-                }
-                _Context.Products.Add(product);
-                _Context.SaveChanges();
+                return BadRequest();
+            }
+            _Context.Products.Add(product);
+            _Context.SaveChanges();
 
-                return new CreatedAtRouteResult("GetProduct", new { id = product.ProductID }, product);
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request");
-            }
+            return new CreatedAtRouteResult("GetProduct", new { id = product.ProductID }, product);
         }
 
         [HttpPut("{id:int}")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Put(int id, Product product)
         {
-            try
+            if (id != product.ProductID)
             {
-                if (id != product.ProductID)
-                {
-                    return BadRequest();
-                }
-
-                _Context.Entry(product).State = EntityState.Modified;
-                _Context.SaveChanges();
-
-                return Ok(product);
+                return BadRequest();
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request");
-            }
+
+            _Context.Entry(product).State = EntityState.Modified;
+            _Context.SaveChanges();
+
+            return Ok(product);
         }
 
         [HttpDelete("{id:int}")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
-            try
+            var product = _Context.Products.FirstOrDefault(P => P.ProductID == id);
+
+            if (product is null)
             {
-                var product = _Context.Products.FirstOrDefault(P => P.ProductID == id);
-
-                if (product is null)
-                {
-                    return NotFound("Product not found in the database.");
-                }
-
-                _Context.Products.Remove(product);
-                _Context.SaveChanges();
-
-                return Ok(product);
+                return NotFound("Product not found in the database.");
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request");
-            }
+
+            _Context.Products.Remove(product);
+            _Context.SaveChanges();
+
+            return Ok(product);
         }
     }
 }
