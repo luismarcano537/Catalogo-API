@@ -578,13 +578,6 @@
             "maxLength": 300,
             "minLength": 0,
             "type": "string"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Product"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

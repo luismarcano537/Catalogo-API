@@ -54,7 +54,7 @@ namespace APICatalogo.Controllers
                 return BadRequest();
             }
 
-            _repository.Update(product);
+            _repository.Created(product);
 
             return new CreatedAtRouteResult("GetProduct", new { id = product.ProductID }, product);
         }
@@ -87,7 +87,7 @@ namespace APICatalogo.Controllers
         {
             bool deleteProduct = _repository.Delete(id);
 
-            if (!deleteProduct)
+            if (deleteProduct)
             {
                 return Ok($"The product with ID:{id} has been successfully removed.");
             }
