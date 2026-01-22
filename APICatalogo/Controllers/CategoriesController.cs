@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using APICatalogo.Filters;
+using APICatalogo.Repositories;
 
 namespace APICatalogo.Controllers
 {
@@ -12,12 +13,12 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly APICatalogoContext _Context;
+        private readonly ICategoryRepository _Repository;
         private readonly ILogger _Logger;
 
-        public CategoriesController(APICatalogoContext context, ILogger<CategoriesController> logger)
+        public CategoriesController(ICategoryRepository Repository, ILogger<CategoriesController> logger)
         {
-            _Context = context;
+            _Repository = Repository;
             _Logger = logger;
         }
 
@@ -26,7 +27,7 @@ namespace APICatalogo.Controllers
         public ActionResult<IEnumerable<Category>> Get()
         {
             _Logger.LogInformation("================ GetCategory ====================");
-            var categories = _Context.Categories.AsNoTracking().ToList();
+            var categories = _Repository.GetCategories();
 
             if (categories is null)
             {
@@ -41,14 +42,14 @@ namespace APICatalogo.Controllers
         public ActionResult<IEnumerable<Category>> GetInclude()
         {
             _Logger.LogInformation("================ GetInclude ====================");
-            var CategoryInclude = _Context.Categories.Include(P => P.Products).Where(P => P.CategoryID < 5).AsNoTracking().ToList();
+            var categoriesIncluded = _Repository.GetInclude();
 
-            if (CategoryInclude is null)
+            if (categoriesIncluded is null)
             {
                 return BadRequest("Unable to display categories and their products");
             }
 
-            return Ok(CategoryInclude);
+            return Ok(categoriesIncluded);
         }
 
         [HttpGet("{id:int}", Name = "GetCategory")]
@@ -56,7 +57,7 @@ namespace APICatalogo.Controllers
         public ActionResult GetCategory(int id)
         {
             _Logger.LogInformation("================ GetCategoryID ====================");
-            var category = _Context.Categories.AsNoTracking().FirstOrDefault(C => C.CategoryID == id);
+            var category = _Repository.GetByID(id);
 
             if (category is null)
             {
@@ -73,14 +74,13 @@ namespace APICatalogo.Controllers
             _Logger.LogInformation("================ PostCategory ====================");
             if (category is null)
             {
-
+                _Logger.LogWarning($"Invalid data");
                 return BadRequest("Unable to create a new category");
             }
 
-            _Context.Categories.Add(category);
-            _Context.SaveChanges();
+            var CategoryCreated = _Repository.Create(category);
 
-            return Ok(category);
+            return new CreatedAtRouteResult("GetCategory", new { id = CategoryCreated.CategoryID }, CategoryCreated);
         }
 
         [HttpPut("{id:int}")]
@@ -93,8 +93,7 @@ namespace APICatalogo.Controllers
                 return BadRequest("Please provide a valid ID.");
             }
 
-            _Context.Entry(category).State = EntityState.Modified;
-            _Context.SaveChanges();
+            _Repository.Update(category);
 
             return Ok(category);
         }
@@ -103,18 +102,19 @@ namespace APICatalogo.Controllers
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
-                _Logger.LogInformation("================ DeleteCategory ====================");
-                var category = _Context.Categories.FirstOrDefault(C => C.CategoryID == id);
+            _Logger.LogInformation("================ DeleteCategory ====================");
 
-                if (category is null)
-                {
-                    return BadRequest("Unable to find the requested category");
-                }
+            var category = _Repository.GetByID(id);
 
-                _Context.Categories.Remove(category);
-                _Context.SaveChanges();
+            if (category is null)
+            {
+                _Logger.LogWarning($"Unable to find category by id: {id}");
+                return BadRequest($"Unable to find category by id: {id}");
+            }
 
-                return Ok(category);
+            var CategoryRemoved = _Repository.Delete(id);
+
+            return Ok(CategoryRemoved);
         }
     }
 }
