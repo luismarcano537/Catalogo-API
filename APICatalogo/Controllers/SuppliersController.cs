@@ -1,6 +1,7 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Filters;
 using APICatalogo.Models;
+using APICatalogo.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,18 +13,18 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class SuppliersController : ControllerBase
     {
-        private readonly APICatalogoContext _Context;
+        private readonly ISupplierRepository _Repository;
 
-        public SuppliersController(APICatalogoContext context)
+        public SuppliersController(ISupplierRepository repository)
         {
-            _Context = context;
+            _Repository = repository;
         }
 
         [HttpGet]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Supplier>> Get()
         {
-            var suppliers = _Context.Suppliers.AsNoTracking().ToList();
+            var suppliers = _Repository.Get();
 
             if (suppliers is null)
             {
@@ -37,7 +38,7 @@ namespace APICatalogo.Controllers
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult GetID(int id)
         {
-            var supplier = _Context.Suppliers.AsNoTracking().FirstOrDefault(S => S.SupplierID == id);
+            var supplier = _Repository.GetByID(id);
 
             if (supplier is null)
             {
@@ -51,7 +52,7 @@ namespace APICatalogo.Controllers
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Supplier>> GetInclude()
         {
-            var supplier = _Context.Suppliers.Include(S => S.Products).Where(S => S.SupplierID < 5).AsNoTracking().ToList();
+            var supplier = _Repository.GetInclude();
 
             if (supplier is null)
             {
@@ -70,10 +71,9 @@ namespace APICatalogo.Controllers
                 return BadRequest("It is impossible to add an empty supplier.");
             }
 
-            _Context.Suppliers.Add(supplier);
-            _Context.SaveChanges();
+            var SupplierNew = _Repository.Create(supplier);
 
-            return Ok();
+            return new CreatedAtRouteResult("GetID", new { id = SupplierNew.SupplierID }, SupplierNew);
         }
 
         [HttpPut("{id:int}")]
@@ -85,25 +85,23 @@ namespace APICatalogo.Controllers
                 return BadRequest("Please provide a valid ID.");
             }
 
-            _Context.Entry(supplier).State = EntityState.Modified;
-            _Context.SaveChanges();
+            var SuppliderDeleted = _Repository.Update(supplier);
 
-            return Ok(supplier);
+            return Ok(SuppliderDeleted);
         }
 
         [HttpDelete("{id:int}")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
-            var supplier = _Context.Suppliers.FirstOrDefault(S => S.SupplierID == id);
+            var supplier = _Repository.GetByID(id);
 
             if (supplier is null)
             {
-                return BadRequest("Please provide a valid ID.");
+                return BadRequest($"Unable to find category by id: {id}");
             }
 
-            _Context.Suppliers.Remove(supplier);
-            _Context.SaveChanges();
+            var SupplierRemoved = _Repository.Delete(id);
 
             return Ok(supplier);
         }

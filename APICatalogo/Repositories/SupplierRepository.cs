@@ -34,12 +34,7 @@ namespace APICatalogo.Repositories
 
         public IEnumerable<Supplier> GetInclude()
         {
-            var supplierInclude = _context.Suppliers.Include(S => S.Products).Where(S => S.SupplierID <= 5).AsNoTracking().ToList();
-
-            if (supplierInclude is null)
-            {
-                throw new ArgumentException($"The informed Supplier does not have registered products.");
-            }
+            var supplierInclude = _context.Suppliers.Include(S => S.Products).AsNoTracking().ToList();
 
             return supplierInclude;
         }
@@ -59,19 +54,24 @@ namespace APICatalogo.Repositories
         }
 
 
-        public Supplier Update(Supplier supplier)
+        public bool Update(Supplier supplier)
         {
-            var supplierUpdate = _context.Suppliers.FirstOrDefault(S => S.SupplierID == supplier.SupplierID);
-
-            if (supplierUpdate is null)
+            if (supplier is null)
             {
-                throw new ArgumentException($"Supplier with ID: {supplier.SupplierID} Not found.");
+                throw new ArgumentException("Please provide a valid supplier.");
             }
 
-            _context.Suppliers.Entry(supplier).State = EntityState.Modified;
-            _context.SaveChanges();
+            if (_context.Suppliers.Any(S => S.SupplierID == supplier.SupplierID))
+            {
+                _context.Suppliers.Update(supplier);
+                _context.SaveChanges();
 
-            return supplierUpdate;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
