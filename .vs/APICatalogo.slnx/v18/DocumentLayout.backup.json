@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\projetos\\APICatalogo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|c:\\projetos\\apicatalogo\\apicatalogo\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51EBD5A0-FA71-BF41-FADA-815DEE748B54}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -126,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 195,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,7 +142,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "APICatalogo\\Repositories\\Repository.cs",
+              "ToolTip": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\Repository.cs",
+              "RelativeToolTip": "APICatalogo\\Repositories\\Repository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T00:26:53.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "APICatalogo\\Repositories\\IRepository.cs",
+              "ToolTip": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "APICatalogo\\Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T00:23:15.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SupplierRepository.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\SupplierRepository.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Repositories\\SupplierRepository.cs",
@@ -142,12 +176,11 @@
               "RelativeToolTip": "APICatalogo\\Repositories\\SupplierRepository.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAIwEUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T00:34:27.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T00:34:27.694Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\IProductRepository.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Repositories\\IProductRepository.cs",
@@ -155,12 +188,11 @@
               "RelativeToolTip": "APICatalogo\\Repositories\\IProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T15:04:58.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-22T15:04:58.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Repositories\\CategoryRepository.cs",
@@ -168,25 +200,24 @@
               "RelativeToolTip": "APICatalogo\\Repositories\\CategoryRepository.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAwwCgAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T14:54:43.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-20T14:54:43.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SuppliersController.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\SuppliersController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\SuppliersController.cs",
               "ToolTip": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\SuppliersController.cs",
               "RelativeToolTip": "APICatalogo\\Controllers\\SuppliersController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFkAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T15:08:56.071Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriesController.cs",
@@ -194,12 +225,11 @@
               "RelativeToolTip": "APICatalogo\\Controllers\\CategoriesController.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAcwFsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T11:55:23.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T11:55:23.724Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Supplier.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Models\\Supplier.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Models\\Supplier.cs",
@@ -207,12 +237,11 @@
               "RelativeToolTip": "APICatalogo\\Models\\Supplier.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T11:49:54.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T11:49:54.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Repositories\\ProductRepository.cs",
@@ -220,12 +249,11 @@
               "RelativeToolTip": "APICatalogo\\Repositories\\ProductRepository.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAwwC0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T15:13:09.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-22T15:13:09.955Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ISupplierRepository.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\ISupplierRepository.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Repositories\\ISupplierRepository.cs",
@@ -233,12 +261,11 @@
               "RelativeToolTip": "APICatalogo\\Repositories\\ISupplierRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T00:27:06.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T00:27:06.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Program.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Program.cs",
@@ -246,12 +273,11 @@
               "RelativeToolTip": "APICatalogo\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T13:01:20.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T13:01:20.051Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "APICatalogo.http",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\APICatalogo.http",
               "RelativeDocumentMoniker": "APICatalogo\\APICatalogo.http",
@@ -259,12 +285,11 @@
               "RelativeToolTip": "APICatalogo\\APICatalogo.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-01-25T01:14:25.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T01:14:25.171Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Repositories\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Repositories\\ICategoryRepository.cs",
@@ -272,12 +297,11 @@
               "RelativeToolTip": "APICatalogo\\Repositories\\ICategoryRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T14:49:10.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-20T14:49:10.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\ProductsController.cs",
@@ -285,12 +309,11 @@
               "RelativeToolTip": "APICatalogo\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T22:45:41.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-09T22:45:41.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Models\\Category.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Models\\Category.cs",
@@ -302,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Models\\Product.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Models\\Product.cs",
@@ -314,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CustomerLoggerProviderConfiguration.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Logging\\CustomerLoggerProviderConfiguration.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Logging\\CustomerLoggerProviderConfiguration.cs",
@@ -326,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "CustomLoggerProvider.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Logging\\CustomLoggerProvider.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Logging\\CustomLoggerProvider.cs",
@@ -338,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "CustomerLogger.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Logging\\CustomerLogger.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Logging\\CustomerLogger.cs",
@@ -350,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ApiExceptionFilter.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Filters\\ApiExceptionFilter.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Filters\\ApiExceptionFilter.cs",
@@ -362,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ApiLoggingFilter.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Filters\\ApiLoggingFilter.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Filters\\ApiLoggingFilter.cs",
@@ -374,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "FirstLetterUpperAttribute.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Controllers\\Validations\\FirstLetterUpperAttribute.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\Validations\\FirstLetterUpperAttribute.cs",
@@ -386,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "20260107004539_PopulaTables.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Migrations\\20260107004539_PopulaTables.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Migrations\\20260107004539_PopulaTables.cs",
@@ -398,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "ErrorDetails.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Models\\ErrorDetails.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Models\\ErrorDetails.cs",
@@ -410,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ApiExceptionMiddlewareExtensions.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Extensions\\ApiExceptionMiddlewareExtensions.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Extensions\\ApiExceptionMiddlewareExtensions.cs",
@@ -422,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "APICatalogoContext.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Context\\APICatalogoContext.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Context\\APICatalogoContext.cs",
@@ -434,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "20260107004345_InitialMigration.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Migrations\\20260107004345_InitialMigration.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Migrations\\20260107004345_InitialMigration.cs",
@@ -446,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "20260111115113_AlterCategorysToCategoriesTable.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Migrations\\20260111115113_AlterCategorysToCategoriesTable.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Migrations\\20260111115113_AlterCategorysToCategoriesTable.cs",
@@ -458,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "20260107004941_PopularSupplier.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Migrations\\20260107004941_PopularSupplier.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Migrations\\20260107004941_PopularSupplier.cs",
@@ -470,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "20260107005724_PopulaProducts.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Migrations\\20260107005724_PopulaProducts.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Migrations\\20260107005724_PopulaProducts.cs",
@@ -482,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "APICatalogoContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\projetos\\APICatalogo\\APICatalogo\\Migrations\\APICatalogoContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Migrations\\APICatalogoContextModelSnapshot.cs",
