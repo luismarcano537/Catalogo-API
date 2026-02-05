@@ -13,12 +13,12 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly ICategoryRepository _Repository;
+        private readonly IRepository<Category> _repository;
         private readonly ILogger _Logger;
 
-        public CategoriesController(ICategoryRepository Repository, ILogger<CategoriesController> logger)
+        public CategoriesController(IRepository<Category> repository, ILogger<CategoriesController> logger)
         {
-            _Repository = Repository;
+            _repository = repository;
             _Logger = logger;
         }
 
@@ -27,7 +27,7 @@ namespace APICatalogo.Controllers
         public ActionResult<IEnumerable<Category>> Get()
         {
             _Logger.LogInformation("================ GetCategory ====================");
-            var categories = _Repository.GetCategories();
+            var categories = _repository.Get();
 
             if (categories is null)
             {
@@ -37,27 +37,12 @@ namespace APICatalogo.Controllers
             return Ok(categories);
         }
 
-        [HttpGet("GetInclude")]
-        [ServiceFilter(typeof(ApiLoggingFilter))]
-        public ActionResult<IEnumerable<Category>> GetInclude()
-        {
-            _Logger.LogInformation("================ GetInclude ====================");
-            var categoriesIncluded = _Repository.GetInclude();
-
-            if (categoriesIncluded is null)
-            {
-                return BadRequest("Unable to display categories and their products");
-            }
-
-            return Ok(categoriesIncluded);
-        }
-
         [HttpGet("{id:int}", Name = "GetCategory")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult GetCategory(int id)
         {
             _Logger.LogInformation("================ GetCategoryID ====================");
-            var category = _Repository.GetByID(id);
+            var category = _repository.GetByID(C => C.CategoryID == id);
 
             if (category is null)
             {
@@ -78,7 +63,7 @@ namespace APICatalogo.Controllers
                 return BadRequest("Unable to create a new category");
             }
 
-            var CategoryCreated = _Repository.Create(category);
+            var CategoryCreated = _repository.Create(category);
 
             return new CreatedAtRouteResult("GetCategory", new { id = CategoryCreated.CategoryID }, CategoryCreated);
         }
@@ -93,7 +78,7 @@ namespace APICatalogo.Controllers
                 return BadRequest("Please provide a valid ID.");
             }
 
-            _Repository.Update(category);
+            _repository.Update(category);
 
             return Ok(category);
         }
@@ -104,7 +89,7 @@ namespace APICatalogo.Controllers
         {
             _Logger.LogInformation("================ DeleteCategory ====================");
 
-            var category = _Repository.GetByID(id);
+            var category = _repository.GetByID(C => C.CategoryID == id);
 
             if (category is null)
             {
@@ -112,7 +97,7 @@ namespace APICatalogo.Controllers
                 return BadRequest($"Unable to find category by id: {id}");
             }
 
-            var CategoryRemoved = _Repository.Delete(id);
+            var CategoryRemoved = _repository.Delete(category);
 
             return Ok(CategoryRemoved);
         }

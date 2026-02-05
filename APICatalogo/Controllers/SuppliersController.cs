@@ -13,18 +13,18 @@ namespace APICatalogo.Controllers
     [ApiController]
     public class SuppliersController : ControllerBase
     {
-        private readonly ISupplierRepository _Repository;
+        private readonly IRepository<Supplier> _repository;
 
-        public SuppliersController(ISupplierRepository repository)
+        public SuppliersController(IRepository<Supplier> repository)
         {
-            _Repository = repository;
+            _repository = repository;
         }
 
         [HttpGet]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Supplier>> Get()
         {
-            var suppliers = _Repository.Get();
+            var suppliers = _repository.Get();
 
             if (suppliers is null)
             {
@@ -38,7 +38,7 @@ namespace APICatalogo.Controllers
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult GetID(int id)
         {
-            var supplier = _Repository.GetByID(id);
+            var supplier = _repository.GetByID(S => S.SupplierID == id);
 
             if (supplier is null)
             {
@@ -48,19 +48,6 @@ namespace APICatalogo.Controllers
             return Ok(supplier);
         }
 
-        [HttpGet("GetInclude")]
-        [ServiceFilter(typeof(ApiLoggingFilter))]
-        public ActionResult<IEnumerable<Supplier>> GetInclude()
-        {
-            var supplier = _Repository.GetInclude();
-
-            if (supplier is null)
-            {
-                return BadRequest("The Supplier is empty");
-            }
-
-            return Ok(supplier);
-        }
 
         [HttpPost]
         [ServiceFilter(typeof(ApiLoggingFilter))]
@@ -71,7 +58,7 @@ namespace APICatalogo.Controllers
                 return BadRequest("It is impossible to add an empty supplier.");
             }
 
-            var SupplierNew = _Repository.Create(supplier);
+            var SupplierNew = _repository.Create(supplier);
 
             return new CreatedAtRouteResult("GetID", new { id = SupplierNew.SupplierID }, SupplierNew);
         }
@@ -85,23 +72,23 @@ namespace APICatalogo.Controllers
                 return BadRequest("Please provide a valid ID.");
             }
 
-            var SuppliderDeleted = _Repository.Update(supplier);
+            var SuppliderUpdate = _repository.Update(supplier);
 
-            return Ok(SuppliderDeleted);
+            return Ok(SuppliderUpdate);
         }
 
         [HttpDelete("{id:int}")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
-            var supplier = _Repository.GetByID(id);
+            var supplier = _repository.GetByID(S => S.SupplierID == id);
 
             if (supplier is null)
             {
                 return BadRequest($"Unable to find category by id: {id}");
             }
 
-            var SupplierRemoved = _Repository.Delete(id);
+            var SupplierRemoved = _repository.Delete(supplier);
 
             return Ok(supplier);
         }

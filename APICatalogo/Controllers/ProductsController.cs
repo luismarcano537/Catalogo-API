@@ -33,17 +33,46 @@ namespace APICatalogo.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{id:int}", Name = "GetProduct")]
+        [HttpGet("{id:int}", Name = "GetProductID")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<Product> GetID(int id)
         {
-            var Product = _repository.GetByID(id);
+            var Product = _repository.GetByID(P => P.ProductID == id);
             if (Product is null)
             {
                 return NotFound($"The requested product with ID:{id} was not found.");
             }
-            return Product;
+            return Ok(Product);
         }
+
+        [HttpGet("category/{id}")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
+        public ActionResult<IEnumerable<Product>> GetIncludeCategory(int id)
+        {
+            var productByCategory = _repository.GetProductsByCategory(id);
+
+            if (productByCategory is null)
+            {
+                return NotFound("The Category is empty");
+            }
+
+            return Ok(productByCategory);
+        }
+
+        [HttpGet("supplier/{id}")]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
+        public ActionResult<IEnumerable<Product>> GetIncludeSupplier(int id)
+        {
+            var productBySupplier = _repository.GetProductsBySupplier(id);
+
+            if (productBySupplier is null)
+            {
+                return NotFound("The Supplier is empty");
+            }
+
+            return Ok(productBySupplier);
+        }
+
 
         [HttpPost]
         [ServiceFilter(typeof(ApiLoggingFilter))]
@@ -54,7 +83,7 @@ namespace APICatalogo.Controllers
                 return BadRequest();
             }
 
-            _repository.Created(product);
+            _repository.Create(product);
 
             return new CreatedAtRouteResult("GetProduct", new { id = product.ProductID }, product);
         }
@@ -65,36 +94,28 @@ namespace APICatalogo.Controllers
         {
             if (id != product.ProductID)
             {
-                return BadRequest();
+                return BadRequest("Unable to update product with ID: {id}");
             }
 
-            bool productUpdate = _repository.Update(product);
+            var productUpdate = _repository.Update(product);
 
-            if (productUpdate)
-            {
-                return Ok(product);
-            }
-            else
-            {
-                return StatusCode(500, $"Unable to update product with ID: {id}");
-            }
-
+            return Ok(productUpdate);
         }
 
         [HttpDelete("{id:int}")]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult Delete(int id)
         {
-            bool deleteProduct = _repository.Delete(id);
+            var product = _repository.GetByID(P => P.ProductID == id);
 
-            if (deleteProduct)
+            if (product is null)
             {
-                return Ok($"The product with ID:{id} has been successfully removed.");
+                return NotFound($"The requested product with ID:{id} was not found.");
             }
-            else
-            {
-                return StatusCode(500, $"Unable to removed the product with ID: {id}");
-            }
+
+            var productDeleted = _repository.Delete(product);
+
+            return Ok(productDeleted);
         }
     }
 }
